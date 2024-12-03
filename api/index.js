@@ -7,7 +7,7 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
-import userRoutes from "./routes/User.js";
+import userRoutes from "../routes/User.js";
 
 // Simulate __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
