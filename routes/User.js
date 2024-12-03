@@ -16,4 +16,8 @@ userRoutes.post("/clerkWebhook", async (req, res) => {
   res.json({ message: "received", status: 200 });
 });
 
+userRoutes.get("/test", (req, res) => {
+  res.send({ status: 200, mssg: "works" });
+});
+
 export default userRoutes;
