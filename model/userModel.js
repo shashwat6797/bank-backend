@@ -19,6 +19,18 @@ const userSchema = new mongoose.Schema({
   imgUrl: String,
 });
 
-const userModel = new mongoose.model("userModel", userSchema);
+const banckAccountSchema = new mongoose.Schema({
+  userId: String,
+  bankId: String,
+  accountId: String,
+  accessToken: String,
+  sharableId: String,
+});
 
-export { userModel };
+const userModel = new mongoose.model("userModel", userSchema);
+const bankAccountModel = new mongoose.model(
+  "bankAccountModel",
+  banckAccountSchema,
+);
+
+export { userModel, bankAccountModel };

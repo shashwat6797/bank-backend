@@ -8,6 +8,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
 import userRoutes from "../routes/User.js";
+import plaidRoutes from "../routes/Plaid.js";
 
 // Simulate __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -38,6 +39,8 @@ app.get("/", (req, res) => {
 });
 
 app.use("/user", userRoutes);
+
+app.use("/plaid", plaidRoutes);
 
 // 404 handler
 app.use((req, res) => {
