@@ -9,6 +9,7 @@ import { fileURLToPath } from "url";
 import mongoose from "mongoose";
 import userRoutes from "../routes/User.js";
 import plaidRoutes from "../routes/Plaid.js";
+import bankRoutes from "../routes/Bank.js";
 
 // Simulate __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -27,9 +28,6 @@ app.use(morgan("combined"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Static file serving
-//app.use(express.static(path.join(__dirname, 'public')));
-
 // Routes
 app.get("/", (req, res) => {
   res.json({
@@ -41,6 +39,8 @@ app.get("/", (req, res) => {
 app.use("/user", userRoutes);
 
 app.use("/plaid", plaidRoutes);
+
+app.use("/bank", bankRoutes);
 
 // 404 handler
 app.use((req, res) => {

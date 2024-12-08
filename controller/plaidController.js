@@ -10,7 +10,7 @@ export const createLinkToken = async (req, res) => {
         client_user_id: userId,
       },
       client_name: userName,
-      products: ["auth"], // No need for type casting in JavaScript
+      products: ["auth", "transactions"], // No need for type casting in JavaScript
       language: "en",
       country_codes: ["US"], // Changed to India country code
     };
